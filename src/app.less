@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+
+@color: #cdd6f4;
+@subtext0: #a6adc8;
+@base: #1e1e2e;
+
+body {
+	font-family: 'Onest', sans-serif;
+	background: @base;
+
+	margin: 0;
+	padding: 0;
+}
+
+#root {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+h1, h2 {
+	color: @color;
+	font-size: 3rem;
+	margin: 6px 0;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+h2, p {
+	margin: 0;
+}
+
+p {
+	color: @subtext0;
+}
+
+.glow {
+	&.red {
+		@color: #f38ba8;
+		color: @color;
+		text-shadow: 0 0 6px fade(@color, 50%);
+	}
+	&.green {
+		@color: #a6e3a1;
+		color: @color;
+		text-shadow: 0 0 6px fade(@color, 50%);
+	}
+}
+
+main {
+	width: 70%;
+	text-align: center;
+}
+
+.snowflake {
+	@size: 10vw;
+	width: @size;
+	height: @size;
+	animation: spin 10s linear infinite;
+	filter: drop-shadow(0 0 16px fade(@color, 30%));
+}
+
+#pos1 {
+	position: fixed;
+	top: 50px;
+	left: 50px;
+}
+
+#pos2 {
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	animation-direction: reverse;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
